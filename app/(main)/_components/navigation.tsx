@@ -7,6 +7,7 @@ import { ElementRef, useEffect, useRef, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { toast } from "sonner";
 import { useSearch } from "@/hooks/use-search";
+import { useSettings } from "@/hooks/use-settings";
 
 import { Item } from "./item";
 import { UserItem } from "./user-item";
@@ -22,6 +23,7 @@ import { TrashBox } from "./trash-box";
 
 export const Navigation = () => {
   const search = useSearch();
+  const settings = useSettings();
   const pathname = usePathname();
   const isMobile = useMediaQuery("(max-width: 768px)");
   const create = useMutation(api.documents.create);
@@ -144,7 +146,7 @@ export const Navigation = () => {
           <Item 
             label="Settings"
             icon={Settings}
-            onClick={()=>{}}
+            onClick={settings.onOpen}
           />
           <Item 
             onClick={handleCreate} 
