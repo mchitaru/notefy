@@ -20,7 +20,7 @@ interface EditorProps {
 
 import { useEdgeStore } from "@/lib/edgestore";
 
-export const Editor = ({
+const Editor = ({
   onChange,
   initialContent,
   editable
@@ -55,3 +55,5 @@ export const Editor = ({
     </div>
   )
 }
+
+export default Editor;
