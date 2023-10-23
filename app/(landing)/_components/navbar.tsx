@@ -2,7 +2,6 @@
 
 import { useConvexAuth } from "convex/react";
 import { SignInButton, UserButton } from "@clerk/clerk-react";
-import { Loader2 } from "lucide-react";
 import Link from "next/link";
 
 import { useScrollTop } from "@/hooks/use-scroll-top";
@@ -24,7 +23,6 @@ export const Navbar = () => {
       <Logo />
       <div className="md:ml-auto md:justify-end justify-between w-full flex items-center gap-x-2">
         {isLoading && (
-          //<Loader2 className="mr-2 h-4 w-4 animate-spin" />
           <Spinner />
         )}
         {!isAuthenticated && !isLoading && (
